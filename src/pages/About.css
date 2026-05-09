@@ -1,0 +1,437 @@
+/* Global Utilities for About Page */
+.section-padding {
+  padding: 100px 0;
+}
+
+.lead-text {
+  font-size: 18px;
+  color: var(--navy-dark) !important;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* 1. Firm Introduction */
+.about-banner {
+  background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop');
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-intro-text p {
+  margin-bottom: 24px;
+}
+
+.image-frame {
+  position: relative;
+  border-radius: 4px;
+  padding: 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.image-frame::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  bottom: 30px;
+  left: 30px;
+  border: 2px solid var(--gold-primary);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.framed-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* 2. Founder Message */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.founder-portrait-wrapper {
+  position: relative;
+}
+
+.founder-portrait {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: var(--shadow-md);
+}
+
+.portrait-caption {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--navy-dark);
+  color: var(--bg-white);
+  padding: 20px 30px;
+  border-left: 4px solid var(--gold-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.portrait-caption h4 {
+  color: var(--bg-white);
+  margin-bottom: 4px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+}
+
+.portrait-caption p {
+  color: var(--gold-primary);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.founder-text {
+  position: relative;
+}
+
+.quote-mark {
+  font-family: var(--font-heading);
+  font-size: 120px;
+  color: var(--gold-primary);
+  opacity: 0.2;
+  position: absolute;
+  top: 60px;
+  left: -20px;
+  line-height: 1;
+  z-index: 1;
+}
+
+.founder-quote {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-style: italic;
+  padding-left: 40px;
+  border-left: 2px solid var(--gold-primary);
+}
+
+/* 3. Vision & Mission */
+.vision-mission-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: 4px;
+}
+
+.vm-card {
+  flex: 1;
+}
+
+.vm-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.vm-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.vm-icon {
+  font-size: 32px;
+  color: var(--gold-primary);
+}
+
+.vm-header h3 {
+  color: var(--bg-white);
+  font-size: 28px;
+  margin: 0;
+}
+
+.vm-card p {
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* 4. Core Values */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.value-item {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.value-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.value-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.value-item h4 {
+  color: var(--bg-white);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.value-item p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* 5. Timeline */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--border-color);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  width: 50%;
+  padding-right: 50px;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 50%;
+  padding-left: 50px;
+  padding-right: 0;
+  text-align: left;
+}
+
+.timeline-item:nth-child(odd) {
+  text-align: right;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-white);
+  border: 3px solid var(--gold-primary);
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -8px;
+}
+
+.timeline-year {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.timeline-content h4 {
+  font-size: 20px;
+  color: var(--navy-dark);
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  color: var(--text-body);
+  font-size: 15px;
+}
+
+/* 6. Certifications */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.premium-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.premium-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.premium-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold-primary);
+  font-size: 24px;
+  line-height: 18px;
+}
+
+.cert-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 30px;
+}
+
+.badge-icon {
+  font-size: 40px;
+}
+
+.badge-item span {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy-dark);
+}
+
+/* 7. Philosophy */
+.philosophy-text {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  line-height: 1.8;
+  color: var(--text-dark);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 8. Infrastructure Overview */
+.infra-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.infra-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infra-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.highlight-icon {
+  font-size: 24px;
+  margin-top: 4px;
+}
+
+.infra-overview-image img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-intro-grid, .founder-grid, .cert-grid, .infra-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-portrait-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .vision-mission-wrapper {
+    flex-direction: column;
+  }
+  
+  .vm-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-item:nth-child(even) {
+    margin-left: 0;
+  }
+
+  .timeline-dot {
+    left: 12px !important;
+    right: auto !important;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .philosophy-text {
+    font-size: 20px;
+  }
+}
