@@ -1,11 +1,74 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   FaLandmark, FaShieldAlt, FaHandshake, FaChartLine, 
   FaCheckCircle, FaFileSignature, FaBuilding, FaArrowRight,
-  FaBalanceScale, FaUserTie
+  FaBalanceScale, FaUserTie, FaGlobe, FaClipboardCheck
 } from 'react-icons/fa';
 import './Home.css';
+
+const Counter = ({ target, duration = 1500 }) => {
+  const [count, setCount] = useState(0);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    let startTimestamp = null;
+    let animationFrameId = null;
+    let started = false;
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          animationFrameId = requestAnimationFrame(step);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      observer.disconnect();
+    };
+  }, [target, duration]);
+
+  return <span ref={elementRef}>{count}</span>;
+};
+
+const previewServices = [
+  {
+    id: 'sebi',
+    title: 'SECURITIES AND EXCHANGE BOARD OF INDIA ACT AND ITS REGULATION',
+    icon: <FaChartLine />,
+    summary: 'Strategic guidance for listing and revocation of securities, SEBI LODR compliance, corporate governance norms, and issue of capital including IPOs, rights issues, and private placements.'
+  },
+  {
+    id: 'fema',
+    title: 'FOREIGN EXCHANGE MANAGEMENT ACT',
+    icon: <FaGlobe />,
+    summary: 'Advisory on foreign direct investment, joint ventures, wholly-owned subsidiaries, compounding applications, and regulatory filings under RBI and FEMA guidelines.'
+  },
+  {
+    id: 'audit',
+    title: 'AUDIT',
+    icon: <FaClipboardCheck />,
+    summary: 'Secretarial audit under Section 204, reconciliation of share capital audit under SEBI guidelines, corporate law due diligence, and assessment of corporate governance practices.'
+  }
+];
 
 const Home = () => {
   const observerRef = useRef(null);
@@ -61,19 +124,21 @@ const Home = () => {
               </h2>
               <div className="section-divider" style={{margin: '24px 0'}}></div>
               <p>
-                As practicing Company Secretaries, we are dedicated to fostering robust corporate governance and ensuring strict adherence to statutory compliances. Our approach is deeply rooted in professional ethics, accuracy, and confidentiality.
+                We are the firm of Practicing Company Secretaries (PCS) engaged in multi-disciplinary services rendering to various clients Corporates, Banks/FIs, Non Profit Organizations (NGOs), Firms etc. in India.
               </p>
               <p>
-                We serve as trusted advisors to Boards of Directors, guiding corporate strategy through the lens of legal compliance and risk management.
+                At present our firm comprising of five qualified, dedicated and experienced Company Secretaries including Founder Promoter Niraj Trivedi.
               </p>
             </div>
             <div className="trust-stats animate-on-scroll delay-2">
               <div className="stat-card glass-panel">
-                <div className="stat-number">30+</div>
+                <div className="stat-number">
+                  <Counter target={30} />+
+                </div>
                 <div className="stat-label">Years of Experience</div>
               </div>
               <div className="stat-card glass-panel">
-                <div className="stat-number">Dedicated</div>
+                <div className="stat-number stat-text">Dedicated</div>
                 <div className="stat-label">Compliance Focus</div>
               </div>
             </div>
@@ -90,33 +155,37 @@ const Home = () => {
             <div className="section-divider"></div>
           </div>
 
-          <div className="services-grid">
-            <div className="service-card animate-on-scroll delay-1">
-              <div className="service-icon-wrapper">
-                <FaBuilding className="service-icon" />
-              </div>
-              <h3>Corporate Law Advisory</h3>
-              <p>Expert guidance on Companies Act, SEBI regulations, and FEMA guidelines for strategic business decisions.</p>
-              <Link to="/services" className="service-link">Read More <FaArrowRight /></Link>
-            </div>
+          <div className="home-services-grid">
+            {previewServices.map((service, index) => (
+              <div 
+                key={service.id} 
+                className="dense-service-card animate-on-scroll"
+                style={{ animationDelay: `${(index % 3) * 0.15}s` }}
+              >
+                <div className="dsc-header">
+                  <div className="dsc-icon-box">
+                    {service.icon}
+                  </div>
+                  <h3 className="dsc-title">{service.title}</h3>
+                </div>
+                
+                <div className="dsc-body">
+                  <p className="dsc-summary">{service.summary}</p>
+                </div>
 
-            <div className="service-card animate-on-scroll delay-2">
-              <div className="service-icon-wrapper">
-                <FaFileSignature className="service-icon" />
+                <div className="dsc-footer">
+                  <div className="dsc-actions">
+                    <Link to="/services" className="dsc-learn-more-btn">
+                      View Details <FaArrowRight className="btn-icon-right" />
+                    </Link>
+                    
+                    <Link to="/contact-us" className="dsc-cta-btn">
+                      Consult Us <FaArrowRight className="btn-icon-right" />
+                    </Link>
+                  </div>
+                </div>
               </div>
-              <h3>Secretarial Audit</h3>
-              <p>Thorough independent verification of records to ensure compliance with applicable laws and regulations.</p>
-              <Link to="/services" className="service-link">Read More <FaArrowRight /></Link>
-            </div>
-
-            <div className="service-card animate-on-scroll delay-3">
-              <div className="service-icon-wrapper">
-                <FaBalanceScale className="service-icon" />
-              </div>
-              <h3>Corporate Governance</h3>
-              <p>Structuring robust governance frameworks, board evaluations, and compliance management systems.</p>
-              <Link to="/services" className="service-link">Read More <FaArrowRight /></Link>
-            </div>
+            ))}
           </div>
           
           <div className="text-center" style={{marginTop: '40px'}}>

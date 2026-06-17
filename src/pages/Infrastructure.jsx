@@ -1,31 +1,31 @@
 import { useEffect, useRef } from 'react';
-import { FaServer, FaShieldAlt, FaFolderOpen, FaDesktop, FaHandshake, FaLock } from 'react-icons/fa';
+import { FaBookOpen, FaUsers, FaClock, FaAward } from 'react-icons/fa';
 import './Infrastructure.css';
 
 const infrastructureFeatures = [
   {
-    icon: <FaDesktop />,
-    title: 'Digital Compliance Systems',
-    desc: 'Equipped with dedicated software for XBRL filing, corporate legal management, and seamless interaction with the MCA21 portal.',
-    bgImage: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=2070&auto=format&fit=crop'
+    icon: <FaBookOpen />,
+    title: 'Thorough Knowledge',
+    desc: 'The promoter and its associates have complete and thorough knowledge on the subject matter. As a result, the clients get proper and accurate guidance to protect from the legal action like penalty and prosecution.',
+    bgImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    icon: <FaFolderOpen />,
-    title: 'Document Management Systems',
-    desc: 'Robust electronic document archiving ensuring that decades of statutory registers and corporate filings are instantly retrievable yet fully secured.',
-    bgImage: 'https://images.unsplash.com/photo-1618044733300-9472054094ee?q=80&w=2071&auto=format&fit=crop'
+    icon: <FaUsers />,
+    title: 'Experience with Teamwork',
+    desc: 'The promoter of this firm has experience of around plus 30 years and its associates are equally holding experience in the field of Corporate Laws. Once the work is assigned to the firm, the same gets completed with full dedication and teamwork that to in reasonable time.',
+    bgImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    icon: <FaServer />,
-    title: 'Technology & Security',
-    desc: 'State-of-the-art secure servers, encrypted communication channels, and strict firewall protocols protect all sensitive corporate information.',
-    bgImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop'
+    icon: <FaClock />,
+    title: 'Time Punctuality',
+    desc: 'Time punctuality is very essence in compliances. Any delay under Corporate Laws may leads to penalty and prosecution. Timely compliance will surely protect the company and its directors from such penalties. We strictly ensure compliances are done timely and accurately.',
+    bgImage: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    icon: <FaLock />,
-    title: 'Client Confidentiality Standards',
-    desc: 'Physical access controls, comprehensive NDAs, and secure disposal protocols ensure absolute discretion in all advisory matters.',
-    bgImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=2070&auto=format&fit=crop'
+    icon: <FaAward />,
+    title: 'Best Quality with Price',
+    desc: 'Due to having experienced, qualified and dedicated team, the services beings provided to the customers are utmost with the best quality and at a reasonable fee. It means, our services is considered as value for money.',
+    bgImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop'
   }
 ];
 
@@ -54,7 +54,7 @@ const Infrastructure = () => {
   return (
     <div className="infrastructure-page">
       <section className="page-banner infra-banner">
-        <h1 className="animate-on-scroll">Operational Infrastructure</h1>
+        <h1 className="animate-on-scroll">Operational Infrastructure & Strengths</h1>
       </section>
 
       {/* Office Infrastructure */}
@@ -62,23 +62,28 @@ const Infrastructure = () => {
         <div className="container">
           <div className="office-grid">
             <div className="office-text animate-on-scroll">
-              <span className="hero-badge" style={{marginBottom: '16px'}}>Headquarters</span>
+              <span className="hero-badge" style={{marginBottom: '16px'}}>Headquarters & Facilities</span>
               <h2 className="section-title" style={{textAlign: 'left'}}>
-                Designed for <span className="gold-text">Excellence</span>
+                Our <span className="gold-text">Infrastructure</span>
               </h2>
               <div className="section-divider" style={{margin: '24px 0'}}></div>
-              <p className="lead-text">
-                Located in a prominent commercial district of Vadodara, our headquarters represents the structural foundation of our professional secretarial practice.
+              
+              <p>
+                Our firm operates from own office premises located in a prominent business area of Vadodara in the State of Gujarat. The offices are equipped with all requisite facilities such as a comprehensive Library, Computers, high-speed Internet, and advanced digital secretarial management systems.
               </p>
               <p>
-                Our infrastructure is purposefully designed to foster a focused, confidential, and highly efficient working environment. It features dedicated zones for intense legal research, expansive administrative workstations for high-volume filings, and a comprehensive physical legal library housing decades of corporate jurisprudence, ICSI manuals, and statutory bare acts.
+                Our operational capabilities are strongly supported by a qualified and dedicated team of assistances. The firm has a good number of employees including semi-qualified Company Secretaries, graduates, and article trainees.
+              </p>
+              <p>
+                To provide broad geographic support, we also operate a Branch Office at Ahmedabad and maintain an Associate Office at Delhi, ensuring seamless nationwide service delivery.
               </p>
             </div>
+            
             <div className="office-image-wrapper animate-on-scroll delay-2">
               <div className="office-image-stack">
                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Premium Corporate Office" className="main-office-img" loading="lazy" />
                 <div className="office-stat-card glass-panel">
-                  <h4>National Presence</h4>
+                  <h4>National Network</h4>
                   <p>Operating from <strong>Vadodara</strong> with branches in <strong>Ahmedabad</strong> and <strong>Delhi</strong>.</p>
                 </div>
               </div>
@@ -91,8 +96,8 @@ const Infrastructure = () => {
       <section className="systems-infra bg-light section-padding">
         <div className="container">
           <div className="text-center animate-on-scroll" style={{marginBottom: '60px'}}>
-             <h2 className="section-title">Technological Backbone</h2>
-             <p className="section-subtitle">Leveraging advanced systems and uncompromising security protocols to safeguard your corporate data.</p>
+             <h2 className="section-title">Core Strengths & Pillars</h2>
+             <p className="section-subtitle">How our experience, knowledge base, and team commitment ensure absolute compliance protection.</p>
              <div className="section-divider"></div>
           </div>
 
@@ -112,32 +117,6 @@ const Infrastructure = () => {
         </div>
       </section>
 
-      {/* Meeting & Consultation Areas */}
-      <section className="consultation-infra bg-navy section-padding">
-        <div className="container">
-          <div className="consultation-grid">
-            <div className="consultation-image animate-on-scroll">
-               <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?q=80&w=2070&auto=format&fit=crop" alt="Executive Boardroom" loading="lazy" />
-            </div>
-            <div className="consultation-text animate-on-scroll delay-2">
-              <FaHandshake className="consultation-icon gold-text" />
-              <h2 className="section-title" style={{color: 'var(--bg-white)', textAlign: 'left'}}>Meeting & Consultation Areas</h2>
-              <div className="section-divider" style={{margin: '24px 0'}}></div>
-              <p style={{color: 'var(--text-light)', fontSize: '16px', lineHeight: '1.8'}}>
-                Strategic corporate decisions require an environment of absolute discretion and professionalism. 
-              </p>
-              <p style={{color: 'var(--text-light)', fontSize: '16px', lineHeight: '1.8'}}>
-                Our firm features sophisticated, sound-proofed executive boardrooms equipped with modern teleconferencing capabilities. These spaces are specifically designed to host secure consultations with Boards of Directors, execute confidential M&A negotiations, and facilitate strategic governance planning without the risk of information leakage.
-              </p>
-              <ul className="infra-features-list">
-                <li>Sound-proofed executive environments</li>
-                <li>Secure high-definition teleconferencing</li>
-                <li>Restricted access zones for visiting delegates</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

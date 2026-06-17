@@ -7,8 +7,9 @@
 /* Executive Profile Card (Founder) */
 .executive-profile-card {
   display: grid;
-  grid-template-columns: 350px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 50px;
+  align-items: center;
   background: var(--bg-white);
   border: 1px solid var(--border-color);
   border-radius: 4px;
@@ -58,7 +59,8 @@
 
 .exec-social {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -231,8 +233,9 @@
 }
 
 .pro-header-text h4 {
-  font-family: var(--font-heading);
-  font-size: 18px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
   color: var(--navy-dark);
   margin-bottom: 4px;
 }

@@ -54,79 +54,52 @@
   border-radius: 2px;
 }
 
-/* 2. Founder Message */
-.founder-grid {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 60px;
-  align-items: center;
+/* 2. Achievements Section */
+.achievements-section {
+  background-color: var(--bg-off-white);
 }
 
-.founder-portrait-wrapper {
-  position: relative;
-}
-
-.founder-portrait {
+.achievements-list-container {
   width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  border-radius: 4px;
-  box-shadow: var(--shadow-md);
+  background-color: var(--bg-white);
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
-.portrait-caption {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  background: var(--navy-dark);
-  color: var(--bg-white);
-  padding: 20px 30px;
-  border-left: 4px solid var(--gold-primary);
-  box-shadow: var(--shadow-lg);
+.achievements-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.portrait-caption h4 {
-  color: var(--bg-white);
-  margin-bottom: 4px;
-  font-family: var(--font-heading);
-  font-size: 20px;
-}
-
-.portrait-caption p {
-  color: var(--gold-primary);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
-  font-weight: 600;
-}
-
-.founder-text {
-  position: relative;
-}
-
-.quote-mark {
-  font-family: var(--font-heading);
-  font-size: 120px;
-  color: var(--gold-primary);
-  opacity: 0.2;
-  position: absolute;
-  top: 60px;
-  left: -20px;
-  line-height: 1;
-  z-index: 1;
-}
-
-.founder-quote {
-  position: relative;
-  z-index: 2;
-  font-family: var(--font-heading);
-  font-size: 22px;
-  line-height: 1.8;
+.achievements-points-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-family: var(--font-body);
+  font-size: 16px;
   color: var(--text-dark);
-  font-style: italic;
-  padding-left: 40px;
-  border-left: 2px solid var(--gold-primary);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.achievement-icon {
+  color: var(--gold-primary);
+  font-size: 20px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .achievements-list-container {
+    padding: 24px 20px;
+  }
+  .achievements-points-list li {
+    font-size: 15px;
+    gap: 12px;
+  }
 }
 
 /* 3. Vision & Mission */
@@ -342,8 +315,8 @@
 
 /* 7. Philosophy */
 .philosophy-text {
-  font-family: var(--font-heading);
-  font-size: 24px;
+  font-family: var(--font-body);
+  font-size: 18px;
   line-height: 1.8;
   color: var(--text-dark);
   max-width: 900px;
@@ -381,15 +354,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
 @media (max-width: 992px) {
-  .about-intro-grid, .founder-grid, .cert-grid, .infra-overview-grid {
+  .about-intro-grid, .cert-grid, .infra-overview-grid {
     grid-template-columns: 1fr;
-  }
-
-  .founder-portrait-wrapper {
-    max-width: 400px;
-    margin: 0 auto;
   }
 
   .vision-mission-wrapper {

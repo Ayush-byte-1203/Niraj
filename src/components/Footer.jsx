@@ -44,11 +44,11 @@ const Footer = () => {
             <div className="footer-col services-col">
               <h4 className="footer-heading">Practice Areas</h4>
               <ul className="footer-links">
-                <li><Link to="/services">Company Incorporation</Link></li>
-                <li><Link to="/services">Corporate Governance</Link></li>
-                <li><Link to="/services">SEBI Regulations</Link></li>
-                <li><Link to="/services">FEMA Compliance</Link></li>
-                <li><Link to="/services">Secretarial Audit</Link></li>
+                <li><Link to="/services#llp">LIMITED LIABILITY PARTNERSHIP ACT</Link></li>
+                <li><Link to="/services#sebi">SECURITIES AND EXCHANGE BOARD OF INDIA ACT AND ITS REGULATION</Link></li>
+                <li><Link to="/services#fema">FOREIGN EXCHANGE MANAGEMENT ACT</Link></li>
+                <li><Link to="/services#ibc">INSOLVENCY AND BANKRUPTCY CODE</Link></li>
+                <li><Link to="/services#audit">AUDIT</Link></li>
               </ul>
             </div>
             

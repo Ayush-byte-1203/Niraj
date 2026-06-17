@@ -4,14 +4,16 @@ import './Contact.css';
 
 const serviceOptions = [
   '--- Select Area of Expertise ---',
-  'Corporate Law Advisory',
-  'Secretarial Audit & Compliance',
-  'SEBI Regulations & Listing Matters',
-  'FEMA & RBI Compliance',
-  'Insolvency & Bankruptcy (IBC)',
-  'Intellectual Property Rights',
-  'Mergers & Restructuring',
-  'Other Corporate Services'
+  'Limited Liability Partnership (LLP) Act',
+  'SEBI Act and its Regulations',
+  'Intellectual Property Rights (IPR)',
+  'Foreign Exchange Management Act (FEMA)',
+  'Foreign Contribution (Regulation) Act (FCRA)',
+  'Insolvency and Bankruptcy Code (IBC)',
+  'Banks and Financial Institutions',
+  'Secretarial & Compliance Audit',
+  'Appearance Before Authorities',
+  'Clientele Advisory'
 ];
 
 const Contact = () => {
@@ -228,7 +230,7 @@ const Contact = () => {
                      name="service"
                      value={formData.service}
                      onChange={handleChange}
-                     className={errors.service ? 'input-error' : ''}
+                     className={`${errors.service ? 'input-error' : ''} ${formData.service === '' ? 'placeholder-active' : ''}`}
                      aria-invalid={errors.service ? 'true' : 'false'}
                      aria-describedby={errors.service ? 'service-error' : undefined}
                    >
@@ -331,26 +333,8 @@ const Contact = () => {
                 <div className="urgent-contact-note">
                    <p>For urgent regulatory notices or NCLT matters, please mark your email subject as <strong>[URGENT]</strong> or call the boardline directly.</p>
                 </div>
-             </div>
+              </div>
           </div>
-        </div>
-      </section>
-
-      {/* Interactive Map Section */}
-      <section className="map-integration-section">
-        <div className="map-container animate-on-scroll">
-          {/* Embedding a standard Google Map iframe centered on Vadodara */}
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118106.70010221669!2d73.17308625!3d22.32210265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8ab91a3ddab%3A0xac39d3bfe1473fb8!2sVadodara%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-            width="100%" 
-            height="450" 
-            style={{border:0}} 
-            allowFullScreen="" 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Niraj Trivedi CS Firm Location"
-            aria-label="Interactive map showing the firm's headquarters in Vadodara"
-          ></iframe>
         </div>
       </section>
     </div>

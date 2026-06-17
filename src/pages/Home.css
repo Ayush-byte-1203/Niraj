@@ -14,10 +14,6 @@
   color: var(--gold-primary);
 }
 
-.text-center {
-  text-align: center;
-}
-
 /* 1. Hero Section */
 .hero-section {
   position: relative;
@@ -41,6 +37,12 @@
 
 .hero-content {
   max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-badge {
@@ -62,6 +64,7 @@
   color: var(--bg-white);
   margin-bottom: 24px;
   line-height: 1.1;
+  text-align: center;
 }
 
 .hero-subtitle {
@@ -70,11 +73,15 @@
   margin-bottom: 40px;
   max-width: 600px;
   line-height: 1.8;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-actions {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 /* 2. Trust Section */
@@ -118,6 +125,11 @@
   color: var(--navy-dark);
   margin-bottom: 8px;
   line-height: 1;
+}
+
+.stat-number.stat-text {
+  font-size: 28px;
+  line-height: 1.2;
 }
 
 .stat-label {
@@ -399,6 +411,14 @@
   font-size: 18px;
 }
 
+.home-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: start;
+  width: 100%;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .hero-title {
@@ -407,7 +427,7 @@
   .trust-grid {
     grid-template-columns: 1fr;
   }
-  .services-grid {
+  .services-grid, .home-services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .features-grid, .process-timeline {
@@ -425,7 +445,7 @@
   .hero-actions {
     flex-direction: column;
   }
-  .services-grid, .features-grid, .process-timeline {
+  .services-grid, .home-services-grid, .features-grid, .process-timeline {
     grid-template-columns: 1fr;
   }
   .testimonial-card {

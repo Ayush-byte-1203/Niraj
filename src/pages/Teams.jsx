@@ -1,68 +1,39 @@
-import { useEffect, useRef } from 'react';
-import { FaLinkedin, FaEnvelope, FaGraduationCap, FaBriefcase, FaAward } from 'react-icons/fa';
+import { useState, useEffect, useRef } from 'react';
+import { FaLinkedin, FaEnvelope, FaAward } from 'react-icons/fa';
 import './Teams.css';
 
 const teamMembers = [
   {
     name: 'CS NIRAJ TRIVEDI',
-    role: 'Founder & Principal Corporate Advisor',
-    qualifications: 'B. Com (Hon.), FCS, ACIS (U.K.), LL.B. (Spl.), PGDCL, PGDLP',
-    expertise: ['Corporate Governance', 'SEBI Regulations', 'FEMA', 'Insolvency Code'],
-    desc: 'Fellow member of ICSI with over 30 years of extensive experience in Corporate Laws. Past Chairman of the Vadodara Chapter of ICSI. He has successfully represented numerous corporations before NCLT, SEBI, and RBI, establishing a benchmark for corporate compliance in Gujarat.',
+    desc: `Fellow member of ICSI and founder of this firm, having extensive knowledge and experience of more than 30 years in the field of Corporate Laws such as the Companies Act, 2013, Foreign Exchange Management Act, 1999 (“FEMA”), Securities and Exchange Board of India Act, 1992 (along with its Rules and Regulations), Foreign Contribution (Regulation) Act, 2010 (“FCRA”), and the Insolvency and Bankruptcy Code, 2016 (“IBC”), among others.\n\nHe was the past Chairman of the Vadodara Chapter of ICSI and is in charge of the overall functioning of the firm. He holds a B.Com. (Honours), is an Associate Member of ACIS (U.K.), and also holds an LL.B. (Special), a Post Graduate Diploma in Cyber Law (PGDCL), and a Post Graduate Diploma in Labour Laws and Practice (PGDLP).\n\nAt present, he represents clients before various statutory authorities such as the National Company Law Tribunals (“NCLT”), National Company Law Appellate Tribunal (“NCLAT”), Regional Directors (“RD”), Registrars of Companies (“ROC”), Reserve Bank of India (“RBI”), and SEBI.\n\nHe is also actively involved in providing professional opinions on complex matters of corporate law, and frequently delivers lectures at various platforms and Study Circle meetings organized by ICSI and ICAI.`,
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop',
-    featured: true,
-    timeline: [
-      { year: '1994', event: 'Founded Niraj Trivedi CS' },
-      { year: '2005', event: 'Elected Chairman of Vadodara ICSI' },
-      { year: '2015', event: 'Achieved ACIS (U.K.) Certification' }
-    ]
+    featured: true
   },
   {
     name: 'ADV. MONA TRIVEDI',
-    role: 'Senior Advocate',
-    qualifications: 'B.A., LL.B.',
-    expertise: ['Corporate Litigation', 'Legal Drafting', 'Contract Law'],
-    desc: 'Providing robust legal strategy and court representation. She ensures that all corporate secretarial actions are fortified with unassailable legal validity.',
+    desc: 'She is an LL.M. (Gold Medalist) by qualification with around 25 years of experience in the fields of Corporate Laws, Banking Regulation, Revenue Matters, Debt Recovery, and Title Clearance. She has been associated with the firm since its inception and handles the drafting of various applications, petitions, appeals, schemes, and other legal documents to be submitted to statutory authorities such as NCLT, NCLAT, SEBI, ROC, RD, and RBI.',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop',
   },
   {
     name: 'CS ASHISH TRIPATHI',
-    role: 'Company Secretary & Branch Head (Ahmedabad)',
-    qualifications: 'ACS, B.Com, LL.B.',
-    expertise: ['ROC Liaising', 'NCLT Matters', 'Stamp Office Clearances'],
-    desc: 'Heads the Ahmedabad operations, specializing in seamless liaising with statutory authorities including the Registrar of Companies and Regional Directors.',
+    desc: 'He is an Associate Company Secretary and a senior partner of the firm with around 15 years of experience in Corporate Laws. He heads the Ahmedabad office and manages liaising with various statutory authorities at Ahmedabad and Gandhinagar, including the ROC, RD, NCLT, and the Stamp Office.',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    name: 'CS KAMAL LALANI',
-    role: 'Senior Compliance Officer',
-    qualifications: 'ACS, M.Com',
-    expertise: ['Secretarial Audit', 'Annual Filings', 'Due Diligence'],
-    desc: 'A meticulous compliance professional dedicated to executing comprehensive secretarial audits and safeguarding client governance frameworks.',
+    name: 'CS SAMIR RAVAL',
     image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    name: 'CS NIKITA PATEL',
-    role: 'Company Secretary',
-    qualifications: 'ACS, B.B.A',
-    expertise: ['XBRL Filing', 'Private Company Compliance', 'Event-based Filings'],
-    desc: 'Specializes in the execution of complex regulatory filings, ensuring absolute accuracy in time-sensitive corporate submissions.',
+    name: 'CS VRUND BHRAMBHATT',
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    name: 'CS NIKKI SHAH',
-    role: 'Company Secretary',
-    qualifications: 'ACS, LL.B.',
-    expertise: ['FEMA Compliance', 'LLP Structuring', 'Statutory Drafting'],
-    desc: 'Expert in unlisted entity compliance, managing complex LLP conversions and managing RBI/FEMA documentation with precision.',
+    name: 'RIYA SHAH',
     image: 'https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=2000&auto=format&fit=crop',
   },
   {
     name: 'CS ISMAIL SHAIKHJIWALA',
-    role: 'Company Secretary',
-    qualifications: 'ACS, B.Com',
-    expertise: ['Company Incorporation', 'Restructuring', 'MCA Approvals'],
-    desc: 'Drives end-to-end entity formation and corporate restructuring operations, guiding startups and established firms through complex incorporations.',
+    desc: 'He is an Associate Company Secretary with around two years of experience in the field of Corporate Laws and FEMA. He handles company formation, company/LLP conversion, and legal compliances for all unlisted and private limited companies under the Companies Act, 2013, and the LLP Act.',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop',
   },
 ];
@@ -126,36 +97,13 @@ const Teams = () => {
                <div className="exec-info-column">
                  <div className="exec-header">
                    <h3>{featuredMember.name}</h3>
-                   <span className="exec-role">{featuredMember.role}</span>
-                 </div>
-                 
-                 <div className="exec-quals">
-                   <FaGraduationCap className="gold-text" />
-                   <span>{featuredMember.qualifications}</span>
                  </div>
 
-                 <p className="exec-bio">{featuredMember.desc}</p>
-
-                 <div className="exec-expertise">
-                   <h4>Areas of Expertise</h4>
-                   <div className="expertise-tags">
-                     {featuredMember.expertise.map((tag, idx) => (
-                       <span key={idx} className="expertise-tag">{tag}</span>
-                     ))}
-                   </div>
-                 </div>
-
-                 <div className="exec-timeline">
-                   <h4>Career Milestones</h4>
-                   <div className="milestone-track">
-                     {featuredMember.timeline.map((item, idx) => (
-                       <div key={idx} className="milestone-item">
-                         <span className="milestone-year">{item.year}</span>
-                         <span className="milestone-event">{item.event}</span>
-                       </div>
-                     ))}
-                   </div>
-                 </div>
+                  <div className="exec-bio">
+                    {featuredMember.desc.split('\n\n').map((para, idx) => (
+                      <p key={idx} style={{ marginBottom: '16px' }}>{para}</p>
+                    ))}
+                  </div>
                </div>
             </div>
           )}
@@ -170,26 +118,16 @@ const Teams = () => {
                   </div>
                   <div className="pro-header-text">
                     <h4>{member.name}</h4>
-                    <span className="pro-role">{member.role}</span>
                   </div>
                 </div>
                 
                 <div className="pro-card-body">
-                  <div className="pro-quals">
-                     <FaGraduationCap className="pro-icon" />
-                     <span>{member.qualifications}</span>
-                  </div>
-                  <p className="pro-desc">{member.desc}</p>
-                  
-                  <div className="pro-expertise">
-                    <FaBriefcase className="pro-icon" />
-                    <div className="expertise-tag-group">
-                      {member.expertise.map((tag, idx) => (
-                        <span key={idx} className="small-tag">{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                   {member.desc ? (
+                     <p className="pro-desc">{member.desc}</p>
+                   ) : (
+                     <div style={{ flexGrow: 1 }} />
+                   )}
+                 </div>
 
                 <div className="pro-card-footer">
                   <a href="#" className="pro-social-icon" aria-label="LinkedIn Profile"><FaLinkedin /></a>

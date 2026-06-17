@@ -45,7 +45,7 @@
 }
 
 .form-header h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 32px;
   color: var(--navy-dark);
   margin: 0;
@@ -108,11 +108,11 @@
 .premium-contact-form select,
 .premium-contact-form textarea {
   width: 100%;
-  padding: 16px 20px;
+  padding: 12px 16px;
   border: 1px solid #CBD5E0;
   border-radius: 4px;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #1A202C;
   background-color: #F8FAFC;
@@ -138,6 +138,17 @@
 .premium-contact-form textarea::placeholder {
   color: #64748B;
   font-weight: 400;
+}
+
+.premium-contact-form select.placeholder-active {
+  color: #64748B !important;
+  font-weight: 400 !important;
+}
+
+.premium-contact-form select option {
+  color: #1A202C;
+  font-weight: 500;
+  background-color: var(--bg-white);
 }
 
 /* Error States */
@@ -189,12 +200,14 @@
 }
 
 .country-code-select {
-  width: 120px !important;
+  width: 110px !important;
   border: none !important;
   background: transparent !important;
   border-right: 1px solid var(--border-color) !important;
   border-radius: 4px 0 0 4px !important;
   cursor: pointer;
+  font-size: 14px !important;
+  padding: 12px 10px !important;
 }
 
 .country-code-select:focus {
@@ -274,6 +287,7 @@
 }
 
 .location-card-header h3 {
+  font-family: var(--font-body);
   color: var(--bg-white);
   margin: 0;
   font-size: 20px;

@@ -1,4 +1,6 @@
+
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FaBalanceScale, FaShieldAlt, FaHandshake, FaBullseye, FaAward, FaCertificate, FaBuilding, FaGlobe } from 'react-icons/fa';
 import './About.css';
 
@@ -36,16 +38,16 @@ const About = () => {
         <div className="container">
           <div className="about-intro-grid">
             <div className="about-intro-text animate-on-scroll">
-              <span className="hero-badge" style={{marginBottom: '16px'}}>Since 1994</span>
-              <h2 className="section-title" style={{textAlign: 'left'}}>
+              <span className="hero-badge" style={{ marginBottom: '16px' }}>Since 1994</span>
+              <h2 className="section-title" style={{ textAlign: 'left' }}>
                 A Legacy of <span className="gold-text">Excellence</span> & Integrity
               </h2>
-              <div className="section-divider" style={{margin: '24px 0'}}></div>
-              <p className="lead-text">
-                Niraj Trivedi & Associates is a distinguished firm of Practising Company Secretaries (PCS) dedicated to delivering comprehensive compliance, corporate advisory, and legal services to Indian and multinational enterprises.
+              <div className="section-divider" style={{ margin: '24px 0' }}></div>
+              <p>
+                We are the firm of Practicing Company Secretaries (PCS) engaged in multi-disciplinary services rendering to various clients Corporates, Banks/FIs, Non Profit Organizations (NGOs), Firms etc. in India.
               </p>
               <p>
-                With over three decades of trusted presence, we serve a prestigious clientele including listed corporates, banking institutions, NGOs, and dynamic startups. Our strength lies in our unwavering commitment to professional ethics, meticulous accuracy, and the cultivation of long-standing client relationships—evidenced by our enduring, multi-decade client partnerships.
+                At present our firm comprising of five qualified, dedicated and experienced Company Secretaries including Founder Promoter Niraj Trivedi.
               </p>
             </div>
             <div className="about-intro-image animate-on-scroll delay-2">
@@ -57,25 +59,30 @@ const About = () => {
         </div>
       </section>
 
-      {/* 2. Founder Message */}
-      <section className="founder-message bg-light section-padding">
+      {/* 2. Achievements Section */}
+      <section className="achievements-section bg-light section-padding">
         <div className="container">
-          <div className="founder-grid">
-            <div className="founder-portrait-wrapper animate-on-scroll">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop" alt="CS Niraj Trivedi" className="founder-portrait" loading="lazy" />
-              <div className="portrait-caption">
-                <h4>CS Niraj Trivedi</h4>
-                <p>Founder & Principal</p>
-              </div>
-            </div>
-            <div className="founder-text animate-on-scroll delay-2">
-              <h2 className="section-title" style={{textAlign: 'left'}}>Message from the Founder</h2>
-              <div className="section-divider" style={{margin: '24px 0'}}></div>
-              <div className="quote-mark">"</div>
-              <blockquote className="founder-quote">
-                "Corporate governance is not merely about regulatory compliance; it is the fundamental framework that ensures long-term sustainability and stakeholder trust. At our firm, we view our role not just as legal advisors, but as strategic partners in our clients' growth journeys. We are committed to navigating the complexities of Indian corporate law with absolute integrity, ensuring that every strategic decision is built on a foundation of unassailable legal compliance."
-              </blockquote>
-            </div>
+          <div className="text-center animate-on-scroll" style={{ marginBottom: '50px' }}>
+            <h2 className="section-title">Achievements</h2>
+            <p className="section-subtitle">Milestones and recognitions demonstrating our legacy of professional excellence.</p>
+            <div className="section-divider"></div>
+          </div>
+          
+          <div className="achievements-list-container animate-on-scroll">
+            <ul className="achievements-points-list">
+              <li>
+                <FaAward className="achievement-icon" />
+                <span>Successfully completed a significant number of IPOs (on both the Main Board and SME Platform) during the last three years.</span>
+              </li>
+              <li>
+                <FaAward className="achievement-icon" />
+                <span>Facilitated proceedings for the merger of an electricity generating company into another similar entity under the Electricity Act (independent of the Companies Act, 2013).</span>
+              </li>
+              <li>
+                <FaAward className="achievement-icon" />
+                <span>Successfully completed various assignments before the NCLT regarding mergers, corporate restructuring, capital reduction, and oppression/mismanagement cases.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -102,7 +109,7 @@ const About = () => {
           </div>
 
           <div className="core-values-section animate-on-scroll delay-2">
-            <h3 className="sub-section-title text-center" style={{color: 'var(--bg-white)', marginTop: '80px', marginBottom: '40px'}}>Our Core Values</h3>
+            <h3 className="sub-section-title text-center" style={{ color: 'var(--bg-white)', marginTop: '80px', marginBottom: '40px' }}>Our Core Values</h3>
             <div className="values-grid">
               <div className="value-item">
                 <FaBalanceScale className="value-icon gold-text" />
@@ -188,8 +195,8 @@ const About = () => {
         <div className="container">
           <div className="cert-grid animate-on-scroll">
             <div className="cert-text">
-              <h2 className="section-title" style={{textAlign: 'left'}}>Certifications & <span className="gold-text">Memberships</span></h2>
-              <div className="section-divider" style={{margin: '24px 0'}}></div>
+              <h2 className="section-title" style={{ textAlign: 'left' }}>Certifications & <span className="gold-text">Memberships</span></h2>
+              <div className="section-divider" style={{ margin: '24px 0' }}></div>
               <p>Our firm is proudly affiliated with the most esteemed professional bodies in India, reflecting our commitment to continuous professional development and adherence to the highest statutory standards.</p>
               <ul className="premium-list">
                 <li>Fellow Member of The Institute of Company Secretaries of India (ICSI)</li>
@@ -218,17 +225,17 @@ const About = () => {
 
       {/* 7. Corporate Philosophy */}
       <section className="philosophy-section bg-white section-padding">
-         <div className="container">
-           <div className="text-center animate-on-scroll">
-             <h2 className="section-title">Our Philosophy</h2>
-             <div className="section-divider"></div>
-           </div>
-           <div className="philosophy-content animate-on-scroll delay-2">
-              <p className="philosophy-text text-center">
-                We believe that robust corporate governance is not a restrictive compliance burden, but a strategic asset that reduces risk, attracts investment, and builds enduring corporate reputations. We practice the law not just to meet the minimum statutory requirements, but to engineer optimal legal frameworks that facilitate our clients' long-term commercial objectives.
-              </p>
-           </div>
-         </div>
+        <div className="container">
+          <div className="text-center animate-on-scroll">
+            <h2 className="section-title">Our Philosophy</h2>
+            <div className="section-divider"></div>
+          </div>
+          <div className="philosophy-content animate-on-scroll delay-2">
+            <p className="philosophy-text text-center">
+              We believe that robust corporate governance is not a restrictive compliance burden, but a strategic asset that reduces risk, attracts investment, and builds enduring corporate reputations. We practice the law not just to meet the minimum statutory requirements, but to engineer optimal legal frameworks that facilitate our clients' long-term commercial objectives.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* 8. Professional Infrastructure Overview */}
@@ -236,28 +243,28 @@ const About = () => {
         <div className="container">
           <div className="infra-overview-grid animate-on-scroll">
             <div className="infra-overview-text">
-              <h2 className="section-title" style={{color: 'var(--bg-white)', textAlign: 'left'}}>Professional Infrastructure</h2>
-              <div className="section-divider" style={{margin: '24px 0'}}></div>
-              <p style={{color: 'var(--text-light)', marginBottom: '24px'}}>To support our rigorous legal work, we maintain state-of-the-art office infrastructure equipped with secure data management systems and comprehensive legal libraries.</p>
+              <h2 className="section-title" style={{ color: 'var(--bg-white)', textAlign: 'left' }}>Professional Infrastructure</h2>
+              <div className="section-divider" style={{ margin: '24px 0' }}></div>
+              <p style={{ color: 'var(--text-light)', marginBottom: '24px' }}>To support our rigorous legal work, we maintain state-of-the-art office infrastructure equipped with secure data management systems and comprehensive legal libraries.</p>
               <div className="infra-highlights">
                 <div className="infra-highlight-item">
                   <FaBuilding className="highlight-icon gold-text" />
                   <div>
-                    <h4 style={{color: 'var(--bg-white)'}}>Headquarters</h4>
-                    <span style={{color: 'var(--text-muted)'}}>Premium commercial space in Vadodara</span>
+                    <h4 style={{ color: 'var(--bg-white)' }}>Headquarters</h4>
+                    <span style={{ color: 'var(--text-muted)' }}>Premium commercial space in Vadodara</span>
                   </div>
                 </div>
                 <div className="infra-highlight-item">
                   <FaShieldAlt className="highlight-icon gold-text" />
                   <div>
-                    <h4 style={{color: 'var(--bg-white)'}}>Data Security</h4>
-                    <span style={{color: 'var(--text-muted)'}}>Enterprise-grade client data protection</span>
+                    <h4 style={{ color: 'var(--bg-white)' }}>Data Security</h4>
+                    <span style={{ color: 'var(--text-muted)' }}>Enterprise-grade client data protection</span>
                   </div>
                 </div>
               </div>
             </div>
             <div className="infra-overview-image">
-               <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop" alt="Legal Library" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop" alt="Legal Library" loading="lazy" />
             </div>
           </div>
         </div>

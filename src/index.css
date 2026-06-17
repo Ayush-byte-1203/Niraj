@@ -123,6 +123,10 @@ img {
   padding: 100px 0;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* Page Banner */
 .page-banner {
   position: relative;
