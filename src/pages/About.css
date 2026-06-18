@@ -191,22 +191,32 @@
   padding: 40px 0;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: var(--border-color);
-  transform: translateX(-50%);
-}
-
 .timeline-item {
   position: relative;
   margin-bottom: 60px;
   width: 50%;
   padding-right: 50px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: -68px;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timeline-item:nth-child(odd)::before {
+  right: -1px;
+}
+
+.timeline-item:nth-child(even)::before {
+  left: -1px;
+}
+
+.timeline-item:last-child::before {
+  display: none;
 }
 
 .timeline-item:nth-child(even) {
@@ -374,8 +384,9 @@
 }
 
 @media (max-width: 768px) {
-  .timeline::before {
-    left: 20px;
+  .timeline-item::before {
+    left: 19px !important;
+    right: auto !important;
   }
 
   .timeline-item {

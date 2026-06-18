@@ -366,13 +366,8 @@
   gap: 16px;
 }
 
-.author-icon {
-  font-size: 32px;
-  color: var(--gold-primary);
-}
-
 .author-details {
-  text-align: left;
+  text-align: center;
 }
 
 .author-details strong {

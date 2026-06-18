@@ -274,7 +274,6 @@ const Home = () => {
                "The firm demonstrates a profound understanding of corporate law. Their meticulous approach to secretarial audits and governance frameworks has been instrumental in maintaining our compliance health."
              </p>
              <div className="testimonial-author">
-               <FaUserTie className="author-icon" />
                <div className="author-details">
                  <strong>Board of Directors</strong>
                  <span>Client Enterprise</span>
