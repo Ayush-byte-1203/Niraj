@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { FaLinkedin, FaEnvelope, FaAward } from 'react-icons/fa';
+import { FaLinkedin, FaAward } from 'react-icons/fa';
 import './Teams.css';
 
 const teamMembers = [
@@ -90,7 +90,6 @@ const Teams = () => {
                  </div>
                  <div className="exec-social">
                     <a href="#" className="exec-social-link"><FaLinkedin /> Connect on LinkedIn</a>
-                    <a href="#" className="exec-social-link"><FaEnvelope /> Email Founder</a>
                  </div>
                </div>
 
@@ -131,7 +130,6 @@ const Teams = () => {
 
                 <div className="pro-card-footer">
                   <a href="#" className="pro-social-icon" aria-label="LinkedIn Profile"><FaLinkedin /></a>
-                  <a href="#" className="pro-social-icon" aria-label="Send Email"><FaEnvelope /></a>
                 </div>
               </div>
             ))}

@@ -269,7 +269,6 @@ const Home = () => {
           </div>
           
           <div className="testimonial-card animate-on-scroll glass-panel-dark">
-             <div className="quote-mark">"</div>
              <p className="testimonial-text">
                "The firm demonstrates a profound understanding of corporate law. Their meticulous approach to secretarial audits and governance frameworks has been instrumental in maintaining our compliance health."
              </p>

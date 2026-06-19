@@ -130,7 +130,9 @@ img {
 /* Page Banner */
 .page-banner {
   position: relative;
-  height: 350px;
+  min-height: 350px;
+  padding-top: 110px;
+  padding-bottom: 50px;
   background-color: var(--navy-dark);
   background-size: cover;
   background-position: center;
@@ -155,6 +157,7 @@ img {
   font-weight: 600;
   line-height: 1.2;
   padding-left: 80px;
+  padding-right: 40px;
 }
 
 /* Buttons */
@@ -232,11 +235,16 @@ img {
     font-size: 32px;
   }
   .page-banner {
-    height: 250px;
+    height: auto;
+    min-height: 220px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    background-attachment: scroll;
   }
   .page-banner h1 {
-    font-size: 40px;
+    font-size: 28px;
     padding-left: 20px;
+    padding-right: 20px;
   }
   body {
     font-size: 15px;

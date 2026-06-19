@@ -59,8 +59,7 @@
 
 .exec-social {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -70,6 +69,7 @@
   justify-content: center;
   gap: 10px;
   padding: 12px;
+  width: 100%;
   background: var(--bg-off-white);
   border: 1px solid var(--border-color);
   border-radius: 4px;
@@ -130,6 +130,7 @@
   font-size: 16px;
   line-height: 1.8;
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .exec-expertise h4, .exec-timeline h4 {
@@ -319,10 +320,6 @@
   color: var(--text-light);
   font-size: 18px;
   transition: var(--transition);
-}
-
-.pro-social-icon:first-child {
-  border-right: 1px solid var(--border-color);
 }
 
 .pro-social-icon:hover {

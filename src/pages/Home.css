@@ -276,8 +276,8 @@
   content: '';
   position: absolute;
   top: 30px;
-  left: 50px;
-  right: 50px;
+  left: calc(12.5% - 11px);
+  right: calc(12.5% - 11px);
   height: 1px;
   background: rgba(255,255,255,0.2);
   z-index: 1;
@@ -410,7 +410,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  align-items: start;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -434,6 +434,12 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    min-height: 520px;
+    padding-top: 110px;
+    padding-bottom: 50px;
+  }
   .hero-title {
     font-size: 36px;
   }
