@@ -127,8 +127,8 @@
 
 .exec-bio {
   color: var(--text-body);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.7;
   margin-bottom: 30px;
   text-align: justify;
 }
@@ -274,11 +274,12 @@
 }
 
 .pro-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-body);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 20px;
   flex-grow: 1;
+  text-align: justify;
 }
 
 .pro-expertise {
