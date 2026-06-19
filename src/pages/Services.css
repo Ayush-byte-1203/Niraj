@@ -68,7 +68,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .dense-service-card {
@@ -81,6 +81,7 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
+  min-height: 420px;
 }
 
 .dense-service-card::before {
@@ -337,6 +338,9 @@
 @media (max-width: 768px) {
   .dense-services-grid {
     grid-template-columns: 1fr;
+  }
+  .dense-service-card {
+    min-height: auto;
   }
 
   .services-hero {

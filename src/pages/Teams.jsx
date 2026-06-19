@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { FaLinkedin, FaAward } from 'react-icons/fa';
 import './Teams.css';
 

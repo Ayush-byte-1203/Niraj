@@ -23,8 +23,11 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    setIsMobileOpen(false);
-    setIsDropdownOpen(false);
+    const timer = setTimeout(() => {
+      setIsMobileOpen(false);
+      setIsDropdownOpen(false);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [location]);
 
   return (
