@@ -352,11 +352,12 @@
 .testimonial-text {
   position: relative;
   z-index: 2;
-  font-size: 20px;
+  font-family: var(--font-heading);
+  font-size: 22px;
   font-style: italic;
-  color: var(--text-dark);
-  margin-bottom: 30px;
-  line-height: 1.6;
+  color: var(--navy-dark);
+  margin-bottom: 24px;
+  line-height: 1.8;
 }
 
 .testimonial-author {
@@ -451,5 +452,10 @@
   }
   .testimonial-card {
     padding: 40px 20px;
+  }
+  .testimonial-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 }
