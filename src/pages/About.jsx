@@ -1,8 +1,76 @@
-
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { FaBalanceScale, FaShieldAlt, FaHandshake, FaBullseye, FaAward, FaCertificate, FaBuilding, FaGlobe } from 'react-icons/fa';
 import './About.css';
+
+const achievementsData = [
+  'Successfully completed a significant number of IPOs (on both the Main Board and SME Platform) during the last three years.',
+  'Facilitated proceedings for the merger of an electricity generating company into another similar entity under the Electricity Act (independent of the Companies Act, 2013).',
+  'Successfully completed various assignments before the NCLT regarding mergers, corporate restructuring, capital reduction, and oppression/mismanagement cases.'
+];
+
+const coreValuesData = [
+  {
+    icon: <FaBalanceScale className="value-icon gold-text" />,
+    title: 'Integrity',
+    desc: 'Absolute transparency and adherence to the ICSI code of conduct.'
+  },
+  {
+    icon: <FaShieldAlt className="value-icon gold-text" />,
+    title: 'Confidentiality',
+    desc: 'Uncompromising protection of client data and strategic information.'
+  },
+  {
+    icon: <FaHandshake className="value-icon gold-text" />,
+    title: 'Partnership',
+    desc: 'Acting as true stakeholders in the sustainable growth of our clients.'
+  },
+  {
+    icon: <FaAward className="value-icon gold-text" />,
+    title: 'Excellence',
+    desc: 'Delivering meticulous accuracy in every legal and statutory filing.'
+  }
+];
+
+const timelineData = [
+  {
+    year: '1994',
+    title: 'Firm Establishment',
+    desc: 'Founded by CS Niraj Trivedi with a vision to provide specialized corporate secretarial services in Vadodara.'
+  },
+  {
+    year: '2005',
+    title: 'Expansion of Services',
+    desc: 'Broadened practice areas to include SEBI regulations, FEMA compliances, and appearances before quasi-judicial bodies.'
+  },
+  {
+    year: '2012',
+    title: 'Ahmedabad Branch',
+    desc: 'Inaugurated a dedicated branch office in Ahmedabad to better serve the growing corporate sector in Gujarat.'
+  },
+  {
+    year: '2018',
+    title: 'NCLT & IBC Practice',
+    desc: 'Established a specialized desk for Insolvency and Bankruptcy Code matters and robust representation before the NCLT.'
+  },
+  {
+    year: 'Present',
+    title: 'National Presence',
+    desc: 'Operating with associate offices in Delhi, serving multinational corporations and listed entities across India.'
+  }
+];
+
+const certificationPoints = [
+  'Fellow Member of The Institute of Company Secretaries of India (ICSI)',
+  'Associate Member of ACIS (United Kingdom)',
+  'Registered Professional under the Insolvency and Bankruptcy Board of India (IBBI)',
+  'Past Chairman, Vadodara Chapter of ICSI'
+];
+
+const certificationBadges = [
+  { text: 'ICSI Fellow' },
+  { text: 'IBBI Registered' },
+  { text: 'ACIS (U.K.)' }
+];
 
 const About = () => {
   const observerRef = useRef(null);
@@ -70,18 +138,12 @@ const About = () => {
           
           <div className="achievements-list-container animate-on-scroll">
             <ul className="achievements-points-list">
-              <li>
-                <FaAward className="achievement-icon" />
-                <span>Successfully completed a significant number of IPOs (on both the Main Board and SME Platform) during the last three years.</span>
-              </li>
-              <li>
-                <FaAward className="achievement-icon" />
-                <span>Facilitated proceedings for the merger of an electricity generating company into another similar entity under the Electricity Act (independent of the Companies Act, 2013).</span>
-              </li>
-              <li>
-                <FaAward className="achievement-icon" />
-                <span>Successfully completed various assignments before the NCLT regarding mergers, corporate restructuring, capital reduction, and oppression/mismanagement cases.</span>
-              </li>
+              {achievementsData.map((achievement, index) => (
+                <li key={index}>
+                  <FaAward className="achievement-icon" />
+                  <span>{achievement}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -111,26 +173,13 @@ const About = () => {
           <div className="core-values-section animate-on-scroll delay-2">
             <h3 className="sub-section-title text-center" style={{ color: 'var(--bg-white)', marginTop: '80px', marginBottom: '40px' }}>Our Core Values</h3>
             <div className="values-grid">
-              <div className="value-item">
-                <FaBalanceScale className="value-icon gold-text" />
-                <h4>Integrity</h4>
-                <p>Absolute transparency and adherence to the ICSI code of conduct.</p>
-              </div>
-              <div className="value-item">
-                <FaShieldAlt className="value-icon gold-text" />
-                <h4>Confidentiality</h4>
-                <p>Uncompromising protection of client data and strategic information.</p>
-              </div>
-              <div className="value-item">
-                <FaHandshake className="value-icon gold-text" />
-                <h4>Partnership</h4>
-                <p>Acting as true stakeholders in the sustainable growth of our clients.</p>
-              </div>
-              <div className="value-item">
-                <FaAward className="value-icon gold-text" />
-                <h4>Excellence</h4>
-                <p>Delivering meticulous accuracy in every legal and statutory filing.</p>
-              </div>
+              {coreValuesData.map((val, index) => (
+                <div className="value-item" key={index}>
+                  {val.icon}
+                  <h4>{val.title}</h4>
+                  <p>{val.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -146,46 +195,16 @@ const About = () => {
           </div>
 
           <div className="timeline">
-            <div className="timeline-item animate-on-scroll">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <span className="timeline-year gold-text">1994</span>
-                <h4>Firm Establishment</h4>
-                <p>Founded by CS Niraj Trivedi with a vision to provide specialized corporate secretarial services in Vadodara.</p>
+            {timelineData.map((item, index) => (
+              <div className="timeline-item animate-on-scroll" key={index}>
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <span className="timeline-year gold-text">{item.year}</span>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
               </div>
-            </div>
-            <div className="timeline-item animate-on-scroll">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <span className="timeline-year gold-text">2005</span>
-                <h4>Expansion of Services</h4>
-                <p>Broadened practice areas to include SEBI regulations, FEMA compliances, and appearances before quasi-judicial bodies.</p>
-              </div>
-            </div>
-            <div className="timeline-item animate-on-scroll">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <span className="timeline-year gold-text">2012</span>
-                <h4>Ahmedabad Branch</h4>
-                <p>Inaugurated a dedicated branch office in Ahmedabad to better serve the growing corporate sector in Gujarat.</p>
-              </div>
-            </div>
-            <div className="timeline-item animate-on-scroll">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <span className="timeline-year gold-text">2018</span>
-                <h4>NCLT & IBC Practice</h4>
-                <p>Established a specialized desk for Insolvency and Bankruptcy Code matters and robust representation before the NCLT.</p>
-              </div>
-            </div>
-            <div className="timeline-item animate-on-scroll">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <span className="timeline-year gold-text">Present</span>
-                <h4>National Presence</h4>
-                <p>Operating with associate offices in Delhi, serving multinational corporations and listed entities across India.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -199,25 +218,18 @@ const About = () => {
               <div className="section-divider" style={{ margin: '24px 0' }}></div>
               <p>Our firm is proudly affiliated with the most esteemed professional bodies in India, reflecting our commitment to continuous professional development and adherence to the highest statutory standards.</p>
               <ul className="premium-list">
-                <li>Fellow Member of The Institute of Company Secretaries of India (ICSI)</li>
-                <li>Associate Member of ACIS (United Kingdom)</li>
-                <li>Registered Professional under the Insolvency and Bankruptcy Board of India (IBBI)</li>
-                <li>Past Chairman, Vadodara Chapter of ICSI</li>
+                {certificationPoints.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
               </ul>
             </div>
             <div className="cert-badges">
-              <div className="badge-item glass-panel">
-                <FaCertificate className="badge-icon gold-text" />
-                <span>ICSI Fellow</span>
-              </div>
-              <div className="badge-item glass-panel">
-                <FaCertificate className="badge-icon gold-text" />
-                <span>IBBI Registered</span>
-              </div>
-              <div className="badge-item glass-panel">
-                <FaCertificate className="badge-icon gold-text" />
-                <span>ACIS (U.K.)</span>
-              </div>
+              {certificationBadges.map((badge, index) => (
+                <div className="badge-item glass-panel" key={index}>
+                  <FaCertificate className="badge-icon gold-text" />
+                  <span>{badge.text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

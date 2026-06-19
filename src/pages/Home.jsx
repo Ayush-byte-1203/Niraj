@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  FaLandmark, FaShieldAlt, FaHandshake, FaChartLine, 
-  FaCheckCircle, FaFileSignature, FaBuilding, FaArrowRight,
-  FaBalanceScale, FaUserTie, FaGlobe, FaClipboardCheck
+  FaShieldAlt, FaHandshake, FaChartLine, 
+  FaCheckCircle, FaArrowRight, FaGlobe, FaClipboardCheck
 } from 'react-icons/fa';
 import './Home.css';
 
@@ -70,6 +69,63 @@ const previewServices = [
   }
 ];
 
+const statsData = [
+  {
+    number: <><Counter target={30} />+</>,
+    label: 'Years of Experience'
+  },
+  {
+    number: 'Dedicated',
+    label: 'Compliance Focus'
+  }
+];
+
+const pillarsData = [
+  {
+    icon: <FaShieldAlt className="feature-icon" />,
+    title: 'Professional Ethics',
+    desc: 'Unwavering commitment to ICSI code of conduct and professional integrity.'
+  },
+  {
+    icon: <FaHandshake className="feature-icon" />,
+    title: 'Strict Confidentiality',
+    desc: 'Absolute discretion and security regarding all corporate data and strategies.'
+  },
+  {
+    icon: <FaCheckCircle className="feature-icon" />,
+    title: 'Meticulous Accuracy',
+    desc: 'Precision in drafting, filing, and representing clients before regulatory bodies.'
+  },
+  {
+    icon: <FaChartLine className="feature-icon" />,
+    title: 'Timely Execution',
+    desc: 'Proactive compliance management to avoid penalties and ensure smooth operations.'
+  }
+];
+
+const processStepsData = [
+  {
+    step: '01',
+    title: 'Consultation',
+    desc: 'Understanding your specific corporate structure and compliance needs.'
+  },
+  {
+    step: '02',
+    title: 'Documentation',
+    desc: 'Rigorous preparation and legal vetting of all necessary secretarial records.'
+  },
+  {
+    step: '03',
+    title: 'Execution',
+    desc: 'Timely filing with MCA, SEBI, or RBI and execution of compliance protocols.'
+  },
+  {
+    step: '04',
+    title: 'Ongoing Support',
+    desc: 'Continuous monitoring of regulatory changes affecting your business.'
+  }
+];
+
 const Home = () => {
   const observerRef = useRef(null);
 
@@ -131,16 +187,14 @@ const Home = () => {
               </p>
             </div>
             <div className="trust-stats animate-on-scroll delay-2">
-              <div className="stat-card glass-panel">
-                <div className="stat-number">
-                  <Counter target={30} />+
+              {statsData.map((stat, index) => (
+                <div className="stat-card glass-panel" key={index}>
+                  <div className={`stat-number ${typeof stat.number === 'string' ? 'stat-text' : ''}`}>
+                    {stat.number}
+                  </div>
+                  <div className="stat-label">{stat.label}</div>
                 </div>
-                <div className="stat-label">Years of Experience</div>
-              </div>
-              <div className="stat-card glass-panel">
-                <div className="stat-number stat-text">Dedicated</div>
-                <div className="stat-label">Compliance Focus</div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -203,26 +257,13 @@ const Home = () => {
           </div>
 
           <div className="features-grid">
-            <div className="feature-item animate-on-scroll delay-1">
-              <FaShieldAlt className="feature-icon" />
-              <h4>Professional Ethics</h4>
-              <p>Unwavering commitment to ICSI code of conduct and professional integrity.</p>
-            </div>
-            <div className="feature-item animate-on-scroll delay-2">
-              <FaHandshake className="feature-icon" />
-              <h4>Strict Confidentiality</h4>
-              <p>Absolute discretion and security regarding all corporate data and strategies.</p>
-            </div>
-            <div className="feature-item animate-on-scroll delay-3">
-              <FaCheckCircle className="feature-icon" />
-              <h4>Meticulous Accuracy</h4>
-              <p>Precision in drafting, filing, and representing clients before regulatory bodies.</p>
-            </div>
-            <div className="feature-item animate-on-scroll delay-4">
-              <FaChartLine className="feature-icon" />
-              <h4>Timely Execution</h4>
-              <p>Proactive compliance management to avoid penalties and ensure smooth operations.</p>
-            </div>
+            {pillarsData.map((pillar, index) => (
+              <div className={`feature-item animate-on-scroll delay-${index + 1}`} key={index}>
+                {pillar.icon}
+                <h4>{pillar.title}</h4>
+                <p>{pillar.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -236,26 +277,13 @@ const Home = () => {
           </div>
 
           <div className="process-timeline">
-            <div className="process-step animate-on-scroll delay-1">
-              <div className="step-number">01</div>
-              <h4>Consultation</h4>
-              <p>Understanding your specific corporate structure and compliance needs.</p>
-            </div>
-            <div className="process-step animate-on-scroll delay-2">
-              <div className="step-number">02</div>
-              <h4>Documentation</h4>
-              <p>Rigorous preparation and legal vetting of all necessary secretarial records.</p>
-            </div>
-            <div className="process-step animate-on-scroll delay-3">
-              <div className="step-number">03</div>
-              <h4>Execution</h4>
-              <p>Timely filing with MCA, SEBI, or RBI and execution of compliance protocols.</p>
-            </div>
-            <div className="process-step animate-on-scroll delay-4">
-              <div className="step-number">04</div>
-              <h4>Ongoing Support</h4>
-              <p>Continuous monitoring of regulatory changes affecting your business.</p>
-            </div>
+            {processStepsData.map((step, index) => (
+              <div className={`process-step animate-on-scroll delay-${index + 1}`} key={index}>
+                <div className="step-number">{step.step}</div>
+                <h4>{step.title}</h4>
+                <p>{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
