@@ -24,7 +24,7 @@ const infrastructureFeatures = [
   {
     icon: <FaAward />,
     title: 'Best Quality with Price',
-    desc: 'Due to having experienced, qualified and dedicated team, the services beings provided to the customers are utmost with the best quality and at a reasonable fee. It means, our services is considered as value for money.',
+    desc: 'Due to our experienced, qualified, and dedicated team, the services being provided to clients are of the highest quality and at a reasonable fee, making our services value for money.',
     bgImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop'
   }
 ];
@@ -69,10 +69,10 @@ const Infrastructure = () => {
               <div className="section-divider" style={{margin: '24px 0'}}></div>
               
               <p>
-                Our firm operates from own office premises located in a prominent business area of Vadodara in the State of Gujarat. The offices are equipped with all requisite facilities such as a comprehensive Library, Computers, high-speed Internet, and advanced digital secretarial management systems.
+                Our firm operates from its own office premises located in a prominent business area of Vadodara in the State of Gujarat. The offices are equipped with all requisite facilities such as a comprehensive library, computer systems, high-speed internet, and advanced digital secretarial management systems.
               </p>
               <p>
-                Our operational capabilities are strongly supported by a qualified and dedicated team of assistances. The firm has a good number of employees including semi-qualified Company Secretaries, graduates, and article trainees.
+                Our operational capabilities are strongly supported by a qualified and dedicated team of assistants. The firm has a good number of employees including semi-qualified Company Secretaries, graduates, and article trainees.
               </p>
               <p>
                 To provide broad geographic support, we also operate a Branch Office at Ahmedabad and maintain an Associate Office at Delhi, ensuring seamless nationwide service delivery.
@@ -82,7 +82,7 @@ const Infrastructure = () => {
             <div className="office-image-wrapper animate-on-scroll delay-2">
               <div className="office-image-stack">
                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Premium Corporate Office" className="main-office-img" loading="lazy" />
-                <div className="office-stat-card glass-panel">
+                <div className="office-stat-card">
                   <h4>National Network</h4>
                   <p>Operating from <strong>Vadodara</strong> with branches in <strong>Ahmedabad</strong> and <strong>Delhi</strong>.</p>
                 </div>

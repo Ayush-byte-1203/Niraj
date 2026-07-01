@@ -132,8 +132,78 @@ const Contact = () => {
           </div>
 
           <div className="contact-premium-grid">
+             {/* Corporate Office Details */}
+             <div className="contact-details-container animate-on-scroll">
+                
+                {/* HQ Card */}
+                <div className="office-location-card">
+                  <div className="location-card-header">
+                     <FaBuilding className="location-badge" />
+                     <h3>Headquarters - Vadodara</h3>
+                  </div>
+                  <div className="location-details">
+                    <div className="detail-row">
+                      <FaMapMarkerAlt className="detail-icon" aria-hidden="true" />
+                      <div className="detail-content">
+                        <strong>Registered Office</strong>
+                        <address>Prominent Commercial Area,<br/>Vadodara, Gujarat 390001, India</address>
+                      </div>
+                    </div>
+                    <div className="detail-row">
+                      <FaPhoneAlt className="detail-icon" aria-hidden="true" />
+                      <div className="detail-content">
+                        <strong>Direct Boardline</strong>
+                        <a href="tel:+919824248079" className="contact-link">+91 982 424 8079</a>
+                      </div>
+                    </div>
+                    <div className="detail-row">
+                      <FaEnvelope className="detail-icon" aria-hidden="true" />
+                      <div className="detail-content">
+                        <strong>Official Email</strong>
+                        <a href="mailto:info@nirajtrivedi-cs.com" className="contact-link">info@nirajtrivedi-cs.com</a>
+                      </div>
+                    </div>
+                    <div className="detail-row">
+                      <FaClock className="detail-icon" aria-hidden="true" />
+                      <div className="detail-content">
+                        <strong>Business Hours</strong>
+                        <p>Monday - Friday: 10:00 AM to 07:00 PM<br/>Saturday: By Appointment Only</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Branch Network */}
+                <div className="office-location-card secondary-office">
+                  <div className="location-card-header">
+                     <FaBuilding className="location-badge" />
+                     <h3>Branch & Associate Offices</h3>
+                  </div>
+                  <div className="location-details">
+                    <div className="detail-row">
+                      <FaMapMarkerAlt className="detail-icon" aria-hidden="true" />
+                      <div className="detail-content">
+                        <strong>Ahmedabad Branch</strong>
+                        <address>Navrangpura, Ahmedabad, Gujarat</address>
+                      </div>
+                    </div>
+                    <div className="detail-row">
+                      <FaMapMarkerAlt className="detail-icon" aria-hidden="true" />
+                      <div className="detail-content">
+                        <strong>Delhi Associate Office</strong>
+                        <address>Connaught Place, New Delhi</address>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="urgent-contact-note">
+                   <p>For urgent regulatory notices or NCLT matters, please mark your email subject as <strong>[URGENT]</strong> or call the boardline directly.</p>
+                </div>
+              </div>
+
              {/* Inquiry Form */}
-             <div className="contact-form-container animate-on-scroll glass-panel">
+             <div className="contact-form-container animate-on-scroll delay-2">
                <div className="form-header">
                  <FaRegCalendarCheck className="form-header-icon gold-text" />
                  <h3>Formal Inquiry</h3>
@@ -264,76 +334,6 @@ const Contact = () => {
                  </button>
                </form>
              </div>
-
-             {/* Corporate Office Details */}
-             <div className="contact-details-container animate-on-scroll delay-2">
-                
-                {/* HQ Card */}
-                <div className="office-location-card">
-                  <div className="location-card-header">
-                     <FaBuilding className="location-badge" />
-                     <h3>Headquarters - Vadodara</h3>
-                  </div>
-                  <div className="location-details">
-                    <div className="detail-row">
-                      <FaMapMarkerAlt className="detail-icon" aria-hidden="true" />
-                      <div className="detail-content">
-                        <strong>Registered Office</strong>
-                        <address>Prominent Commercial Area,<br/>Vadodara, Gujarat 390001, India</address>
-                      </div>
-                    </div>
-                    <div className="detail-row">
-                      <FaPhoneAlt className="detail-icon" aria-hidden="true" />
-                      <div className="detail-content">
-                        <strong>Direct Boardline</strong>
-                        <a href="tel:+919824248079" className="contact-link">+91 982 424 8079</a>
-                      </div>
-                    </div>
-                    <div className="detail-row">
-                      <FaEnvelope className="detail-icon" aria-hidden="true" />
-                      <div className="detail-content">
-                        <strong>Official Email</strong>
-                        <a href="mailto:info@nirajtrivedi-cs.com" className="contact-link">info@nirajtrivedi-cs.com</a>
-                      </div>
-                    </div>
-                    <div className="detail-row">
-                      <FaClock className="detail-icon" aria-hidden="true" />
-                      <div className="detail-content">
-                        <strong>Business Hours</strong>
-                        <p>Monday - Friday: 10:00 AM to 07:00 PM<br/>Saturday: By Appointment Only</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Branch Network */}
-                <div className="office-location-card secondary-office">
-                  <div className="location-card-header">
-                     <FaBuilding className="location-badge" />
-                     <h3>Branch & Associate Offices</h3>
-                  </div>
-                  <div className="location-details">
-                    <div className="detail-row">
-                      <FaMapMarkerAlt className="detail-icon" aria-hidden="true" />
-                      <div className="detail-content">
-                        <strong>Ahmedabad Branch</strong>
-                        <address>Navrangpura, Ahmedabad, Gujarat</address>
-                      </div>
-                    </div>
-                    <div className="detail-row">
-                      <FaMapMarkerAlt className="detail-icon" aria-hidden="true" />
-                      <div className="detail-content">
-                        <strong>Delhi Associate Office</strong>
-                        <address>Connaught Place, New Delhi</address>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="urgent-contact-note">
-                   <p>For urgent regulatory notices or NCLT matters, please mark your email subject as <strong>[URGENT]</strong> or call the boardline directly.</p>
-                </div>
-              </div>
           </div>
         </div>
       </section>

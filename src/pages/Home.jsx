@@ -152,19 +152,29 @@ const Home = () => {
     <div className="home-page">
       {/* 1. Hero Section */}
       <section className="hero-section">
-        <div className="hero-overlay"></div>
         <div className="container hero-container">
-          <div className="hero-content animate-on-scroll">
-            <div className="hero-badge">Corporate Governance & Compliance</div>
-            <h1 className="hero-title">
-              Excellence in Corporate <span className="gold-text">Compliance</span>
-            </h1>
-            <p className="hero-subtitle">
-              Navigating complex legal landscapes with uncompromised integrity. We provide strategic Company Secretary services to ensure your business remains compliant and secure.
-            </p>
-            <div className="hero-actions">
-              <Link to="/services" className="btn-primary">Explore Services</Link>
-              <Link to="/contact-us" className="btn-gold">Contact Us</Link>
+          <div className="hero-grid">
+            <div className="hero-text-col animate-on-scroll">
+              <div className="hero-badge">Corporate Governance & Compliance</div>
+              <h1 className="hero-title">
+                Excellence in Corporate <span className="gold-text">Compliance</span>
+              </h1>
+              <p className="hero-subtitle">
+                Navigating complex legal landscapes with uncompromised integrity. We provide strategic Company Secretary services to ensure your business remains compliant and secure.
+              </p>
+              <div className="hero-actions">
+                <Link to="/services" className="btn-primary">Explore Services</Link>
+                <Link to="/contact-us" className="btn-gold">Contact Us</Link>
+              </div>
+            </div>
+            <div className="hero-image-col animate-on-scroll delay-2">
+              <div className="hero-image-frame">
+                <img 
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
+                  alt="Niraj Trivedi Corporate Office"
+                  className="hero-framed-image" 
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -188,7 +198,7 @@ const Home = () => {
             </div>
             <div className="trust-stats animate-on-scroll delay-2">
               {statsData.map((stat, index) => (
-                <div className="stat-card glass-panel" key={index}>
+                <div className="stat-card" key={index}>
                   <div className={`stat-number ${typeof stat.number === 'string' ? 'stat-text' : ''}`}>
                     {stat.number}
                   </div>
@@ -269,10 +279,10 @@ const Home = () => {
       </section>
 
       {/* 5. Process Section */}
-      <section className="process-section bg-navy">
+      <section className="process-section bg-light">
         <div className="container">
           <div className="text-center animate-on-scroll">
-            <h2 className="section-title" style={{color: 'var(--bg-white)'}}>Our Engagement Process</h2>
+            <h2 className="section-title">Our Engagement Process</h2>
             <div className="section-divider"></div>
           </div>
 
@@ -296,7 +306,7 @@ const Home = () => {
             <div className="section-divider"></div>
           </div>
           
-          <div className="testimonial-card animate-on-scroll glass-panel-dark">
+          <div className="testimonial-card animate-on-scroll">
              <p className="testimonial-text">
                "The firm demonstrates a profound understanding of corporate law. Their meticulous approach to secretarial audits and governance frameworks has been instrumental in maintaining our compliance health."
              </p>

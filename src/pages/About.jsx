@@ -119,7 +119,7 @@ const About = () => {
               </p>
             </div>
             <div className="about-intro-image animate-on-scroll delay-2">
-              <div className="image-frame glass-panel">
+              <div className="image-frame">
                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Corporate Office" className="framed-image" loading="lazy" />
               </div>
             </div>
@@ -225,7 +225,7 @@ const About = () => {
             </div>
             <div className="cert-badges">
               {certificationBadges.map((badge, index) => (
-                <div className="badge-item glass-panel" key={index}>
+                <div className="badge-item" key={index}>
                   <FaCertificate className="badge-icon gold-text" />
                   <span>{badge.text}</span>
                 </div>

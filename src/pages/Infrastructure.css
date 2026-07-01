@@ -93,7 +93,7 @@
 .system-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.6) 50%, rgba(10, 25, 47, 0.4) 100%);
+  background: rgba(10, 25, 47, 0.75);
   z-index: 2;
   transition: var(--transition);
 }
@@ -141,7 +141,7 @@
 }
 
 .system-card:hover .system-overlay {
-  background: linear-gradient(to top, rgba(10, 25, 47, 0.98) 0%, rgba(10, 25, 47, 0.8) 100%);
+  background: rgba(10, 25, 47, 0.88);
 }
 
 .system-card:hover .system-icon {
@@ -279,6 +279,6 @@
   }
   
   .system-overlay {
-    background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.7) 100%);
+    background: rgba(10, 25, 47, 0.88);
   }
 }

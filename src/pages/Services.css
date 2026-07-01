@@ -18,7 +18,7 @@
 .services-hero .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.8) 100%);
+  background: rgba(10, 25, 47, 0.88);
 }
 
 .services-hero .hero-content {
@@ -74,35 +74,20 @@
 .dense-service-card {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
   min-height: 420px;
 }
 
-.dense-service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-
 .dense-service-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(212, 175, 55, 0.3);
-}
-
-.dense-service-card:hover::before {
-  background-color: var(--gold-primary);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-primary);
 }
 
 /* Card Header */
@@ -110,22 +95,29 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 30px 30px 20px;
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--bg-off-white);
+  padding: 32px 32px 16px;
+  background-color: var(--bg-white);
 }
 
 .dsc-icon-box {
-  width: 50px;
-  height: 50px;
-  background-color: var(--navy-dark);
-  color: var(--gold-primary);
+  width: 52px;
+  height: 52px;
+  background-color: var(--bg-off-white);
+  border: 1px solid var(--border-color);
+  color: var(--navy-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  border-radius: 4px;
+  font-size: 22px;
+  border-radius: 8px;
   flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.dense-service-card:hover .dsc-icon-box {
+  background-color: var(--navy-dark);
+  border-color: var(--navy-dark);
+  color: var(--gold-primary);
 }
 
 .dsc-title {
@@ -382,7 +374,7 @@
   margin: 0 auto;
   background-color: var(--bg-off-white);
   padding: 40px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
 }

@@ -16,7 +16,7 @@
   padding: 40px;
   margin-bottom: 80px;
   box-shadow: var(--shadow-md);
-  border-top: 4px solid var(--gold-primary);
+  border-top: 3px solid var(--gold-primary);
 }
 
 .exec-img-wrapper {
@@ -204,7 +204,7 @@
 }
 
 .pro-team-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: var(--gold-primary);
 }

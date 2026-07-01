@@ -79,7 +79,7 @@ const Teams = () => {
 
           {/* Featured Member (Founder) - Executive Profile Layout */}
           {featuredMember && (
-            <div className="executive-profile-card animate-on-scroll glass-panel">
+            <div className="executive-profile-card animate-on-scroll">
                <div className="exec-image-column">
                  <div className="exec-img-wrapper">
                    <img src={featuredMember.image} alt={featuredMember.name} loading="lazy" />
